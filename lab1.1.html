@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>page</title>
+
+    <style>
+        body {
+            background: #c7e9ea;      /* Outer blue background */
+            padding: 20px;
+            font-family: monospace;   /* Matches code styling */
+        }
+
+        .outer-box {
+            border: 2px solid #999;
+            background: #e6e7e9;      /* Grey background */
+            padding: 20px;
+        }
+
+        .mid-box {
+            border: 2px solid #999;
+            background: #e6e7e9;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .inner-box {
+            border: 2px solid #999;
+            background: white;
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        .subindented {
+            border: 2px solid #999;
+            background: white;
+            padding: 5px;
+            margin: 5px;
+        }
+        code {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="outer-box">
+&lt;html&gt;
+
+    <div class="mid-box">
+    &lt;head&gt;
+
+        <div class="inner-box">
+            &lt;title&gt;Page title&lt;/title&gt;
+        </div>
+
+    &lt;/head&gt;
+
+        <div class="mid-box">
+        &lt;body&gt;
+
+            <div class="inner-box">
+                <div class="subindented">
+                &lt;h1&gt;This is heading&lt;/h1&gt;
+                </div>
+                <div class="subindented">
+                &lt;p&gt;This is paragraph&lt;/p&gt;
+                </div>
+                <div class="subindented">
+                &lt;p&gt;This is another paragraph&lt;/p&gt;
+                </div>
+            </div>
+
+        &lt;/body&gt;
+        </div>
+
+&lt;/html&gt;
+</div>
+
+</body>
+</html>
