@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Lab Assignment – Combined</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: radial-gradient(circle at top, #d0dff5 0, #7da0e7 50%, #399fd3 100%);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #dde3f0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #1a4fd4;
+        }
+        .demo-box {
+            margin-top: 10px;
+            border-radius: 16px;
+            padding: 16px 18px;
+            background: #fffdf8;
+            border: 1px dashed rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            margin-left: 14px;
+            text-decoration: none;
+            font-size: 14px;
+            color: #555;
+            padding: 6px 10px;
+            border-radius: 999px;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+        }
+
+        nav a:hover {
+            background: #1a4fd4;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 25px auto 40px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(15, 35, 80, 0.12);
+            padding: 20px 22px 24px;
+            margin-bottom: 24px;
+            border: 1px solid #e2e7f3;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #182948;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 14px;
+        }
+
+        code.inline {
+            background: #f3f4ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        /* Question 1 demo */
+        .q1-demo {
+            background-color: #d7f2ff;
+            color: #003366;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 12px;
+            border: 3px dashed #9ac7ff;
+        }
+
+        /* Question 4 image */
+       .kiit-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .kiit-logo img {
+            width: 300px;
+            height : auto;
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+            border: 2px solid #fff;
+        }
+
+        /* Seminar table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #555;
+        }
+
+        th,
+        td {
+            padding: 8px 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background: #e5edff;
+        }
+
+        /* Gmail sign-in card */
+        .gmail-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .gmail-card {
+            width: 340px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 28px 24px;
+            text-align: center;
+            border: 1px solid #e1e4ef;
+        }
+
+        .gmail-card img {
+            margin-bottom: 10px;
+        }
+
+        .gmail-card h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .gmail-card p {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .gmail-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid #cdd4e0;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .gmail-input:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.15);
+        }
+
+        .gmail-btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 999px;
+            border: none;
+            background: #1a73e8;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.1s, box-shadow 0.15s;
+        }
+
+        .gmail-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(26, 115, 232, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+            padding: 15px 0 25px;
+        }
+
+        @media (max-width: 650px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand">HTML LAB – Demo</div>
+            <nav>
+                <a href="#q1">Q1</a>
+                <a href="#q2">Q2</a>
+                <a href="#q3">Q3</a>
+                <a href="#q4">Q4</a>
+                <a href="#q5">Q5</a>
+                <a href="#q6">Q6</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Q1 -->
+        <section id="q1" class="card">
+            <h2>Q1. My First Web Page (Font Tag + Background & Text Colour)</h2>
+            <p class="subtitle">
+                Design a page having suitable background colour and text colour with title
+                <code class="inline">"My First Web Page"</code> using all attributes of the <code
+                    class="inline">&lt;font&gt;</code> tag.
+            </p>
+
+            <!-- Demo area REPRESENTING answer for Q1 -->
+            <div class="q1-demo">
+                <!-- using all attributes: face, size, color -->
+                <font face="Verdana" size="6" color="darkblue"><b>My First Web Page</b></font>
+                <br><br>
+                <font face="Georgia" size="4" color="green">
+                    Welcome! This is a sample text using the <b>&lt;font&gt;</b> tag attributes:
+                    <i>face</i>, <i>size</i> and <i>color</i>.
+                </font>
+            </div>
+        </section>
+
+        <!-- Q2 -->
+        <section id="q2" class="card">
+            <h2>Q2. Page About HTML &amp; Its Usage</h2>
+            <p class="subtitle">
+                HTML page containing content about HTML and its usage in a paragraph with a suitable heading.
+            </p>
+
+            <h1 style="color:#c026d3; font-size:26px; margin-bottom:10px;">
+                Introduction to HTML
+            </h1>
+            <p style="font-size:16px;">
+                HTML (HyperText Markup Language) is the standard language used to create webpages.
+                It uses a collection of tags to structure content such as headings, paragraphs,
+                images, links, tables and forms. With the help of CSS and JavaScript, HTML pages can
+                become visually appealing and interactive, forming the basis of every modern website.
+            </p>
+        </section>
+
+        <!-- Q3 -->
+        <section id="q3" class="card">
+            <h2>Q3. Different Character Formatting Tags</h2>
+            <p class="subtitle">
+                Page to show various character formatting tags.
+            </p>
+
+            <p><b>Bold text example</b></p>
+            <p><i>Italic text example</i></p>
+            <p><u>Underlined text example</u></p>
+            <p><strike>Strikethrough example</strike></p>
+            <p><big>Bigger text using &lt;big&gt;</big></p>
+            <p><small>Smaller text using &lt;small&gt;</small></p>
+            <p>
+                Superscript &amp; subscript example:
+                log<sub>b</sub> m<sup>p</sup> = p log<sub>b</sub> m
+            </p>
+        </section>
+
+        <!-- Q4 -->
+        <section id="q4" class="card">
+            <h2>Q4. KIIT Logo Page with Link to School of Computer Engineering</h2>
+            <p class="subtitle">
+                Logo on left; when user clicks the image, it opens the “School of Computer Engineering” page.
+            </p>
+
+            <!-- In your lab, replace src with local image file: src="kiit.png" -->
+            <div class ="demo-box kiit-logo">
+            <a href="https://cse.kiit.ac.in/" target="_blank">
+                <img class="kiit-logo" src="kiit_logo.png" alt="KIIT Logo" >
+            </a>
+
+            <h3 style="margin-bottom:6px;">Welcome to KIIT</h3>
+            <p>
+                This demo shows the KIIT logo aligned to the left. Click on the logo to open
+                the official page of the School of Computer Engineering in a new tab.
+            </p>
+            <div style="clear: both;"></div>
+        </section>
+
+        <!-- Q5 -->
+        <section id="q5" class="card">
+            <h2>Q5. Seminar Schedule Table</h2>
+            <p class="subtitle">
+                Table designed similar to the one given in the question.
+            </p>
+
+            <table>
+                <table border="1" cellspacing="0" cellpadding="8" width="80%">
+        
+        <!-- Main Heading -->
+        <tr>
+            <th rowspan="3">Day</th>
+            <th colspan="3">Seminar</th>
+        </tr>
+               <tr>
+                    <th colspan="2">Schedule</th>
+                    <th rowspan="2">Topic</th>
+                </tr>
+                <tr>
+                    <th>Begin</th>
+                    <th>End</th>
+                </tr>
+
+                <!-- Monday -->
+                <tr>
+                    <td rowspan="2">Monday</td>
+                    <td>8:00 a.m.</td>
+                    <td>5:00 p.m.</td>
+                    <td>Introduction to XML</td>
+                </tr>
+                <tr>
+                    <td>8:00 a.m.</td>
+                    <td>5:00 p.m.</td>
+                    <td>Validity: DTD and Relax NG</td>
+                </tr>
+
+                <!-- Tuesday -->
+                <tr>
+                    <td rowspan="3">Tuesday</td>
+                    <td>8:00 a.m.</td>
+                    <td>11:00 a.m.</td>
+                    <td>XPath</td>
+                </tr>
+                <tr>
+                    <td>11:00 a.m.</td>
+                    <td>2:00 p.m.</td>
+                    <td rowspan="2">XSL Transformations</td>
+                </tr>
+                <tr>
+                    <td>2:00 p.m.</td>
+                    <td>5:00 p.m.</td>
+                </tr>
+
+                <!-- Wednesday -->
+                <tr>
+                    <td>Wednesday</td>
+                    <td>8:00 a.m.</td>
+                    <td>12:00 p.m.</td>
+                    <td>XSL Formatting Objects</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Q6 -->
+        <section id="q6" class="card">
+            <h2>Q6. Gmail Sign-In Page</h2>
+            <p class="subtitle">
+                Simple sign-in box styled to look similar to Gmail.
+            </p>
+
+            <div class="gmail-wrapper">
+                <div class="gmail-card">
+                    <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                        alt="Google Logo" width="120">
+                    <h3>Sign in</h3>
+                    <p>to continue to Gmail</p>
+
+                    <input type="text" class="gmail-input" placeholder="Email or phone">
+                    <button class="gmail-btn">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        HTML Assignment Demo &bull; All questions combined in one attractive page.
+    </footer>
+
+</body>
+
+</html>

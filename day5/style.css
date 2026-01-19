@@ -1,0 +1,184 @@
+/* =============================
+   SMOOTH SCROLL
+============================= */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =============================
+   BODY BACKGROUND (CRITICAL)
+============================= */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #c7d2fe, transparent 40%),
+        radial-gradient(circle at bottom right, #fbcfe8, transparent 40%),
+        linear-gradient(135deg, #bae6fd, #fdf2f8);
+
+    background-attachment: fixed;
+}
+
+/* =============================
+   NAVBAR (FLEXBOX)
+============================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+    color: white;
+
+    background: rgba(13, 71, 161, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* =============================
+   CONTAINER
+============================= */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    background: transparent;
+}
+
+/* =============================
+   HEADING (ID)
+============================= */
+#mainHeading {
+    font-size: 40px;
+    text-align: center;
+    color: #0d47a1;
+    margin-bottom: 40px;
+}
+
+/* =============================
+   GLASS CARD (KEY PART)
+============================= */
+.card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+    border-radius: 22px;
+    padding: 28px;
+    margin-bottom: 32px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* =============================
+   REQUIRED STYLES
+============================= */
+.green-box {
+    border: 2px solid green;
+    padding: 12px;
+}
+
+.box-model {
+    margin: 15px 0;
+    padding: 20px;
+    border: 2px solid #222;
+    background: #e3f2fd;
+}
+
+.inline-box {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    text-align: center;
+    line-height: 100px;
+    background: linear-gradient(135deg, #90caf9, #42a5f5);
+}
+
+.hover-link:hover {
+    color: crimson;
+}
+
+.square-list {
+    list-style-type: square;
+}
+
+.column {
+    width: 45%;
+    padding: 15px;
+    background: #c8e6c9;
+}
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
+.bg-image {
+    background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+    background-size: cover;
+    color: white;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff7043, #d84315);
+}
+
+.styled-button {
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    color: white;
+}
+
+.styled-button:active {
+    transform: scale(0.95);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.styled-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.styled-form input {
+    width: 100%;
+    padding: 8px;
+}

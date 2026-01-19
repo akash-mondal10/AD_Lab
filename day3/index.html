@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AD Lab Assignment 03</title>
+
+    <style>
+        /* ===== LIST CARD ===== */
+        .list-card {
+            background: linear-gradient(135deg, #2563EB, #38BDF8);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .list-card h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        /* ===== LOGO LIST ===== */
+        .logo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .logo-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #F8FAFC;
+            color: #0F172A;
+            /* FIX: dark readable text */
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .logo-list li:hover {
+            transform: translateX(6px);
+            background: #E0F2FE;
+        }
+
+        /* ===== LOGO ICON ===== */
+        .logo-list img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        /* ===== COLORFUL FORM CARD ===== */
+        .form-card {
+            background: linear-gradient(135deg, #2563EB, #38BDF8);
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-card h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        /* ===== FORM LAYOUT ===== */
+        .styled-form {
+            max-width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* ===== INPUT STYLING ===== */
+        .styled-form input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            background: #F8FAFC;
+            transition: 0.3s;
+        }
+
+        .styled-form input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+            transform: scale(1.02);
+        }
+
+        /* ===== SUBMIT BUTTON ===== */
+        .styled-form button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 30px;
+            border: none;
+            background: linear-gradient(90deg, #0F172A, #1E40AF);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .styled-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ================= DESIGN SYSTEM ================= */
+        :root {
+            --primary: #2563EB;
+            --secondary: #0F172A;
+            --accent: #38BDF8;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+        }
+
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            scroll-behavior: smooth;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            height: 90px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ================= DASHBOARD ================= */
+        .dashboard {
+            display: flex;
+            height: calc(100vh - 90px);
+        }
+
+        /* ================= SIDEBAR ================= */
+        nav {
+            width: 28%;
+            background: linear-gradient(180deg, var(--secondary), #1E3A8A);
+            padding: 25px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            margin-bottom: 14px;
+        }
+
+        nav a {
+            display: block;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #E5E7EB;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: var(--accent);
+            color: #0F172A;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+        }
+
+        /* ================= MAIN CONTENT ================= */
+        main {
+            width: 72%;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        /* ================= CARDS ================= */
+        section {
+            background: var(--card);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-4px);
+        }
+
+        section h2 {
+            color: var(--primary);
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        /* ================= ICON LIST ================= */
+        .icon-list li {
+            list-style: none;
+            padding: 14px 14px 14px 44px;
+            margin-bottom: 12px;
+            background: #F1F5F9 no-repeat 14px center;
+            background-size: 18px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .icon-list li:hover {
+            background: #E0F2FE;
+        }
+
+        /* ================= SELECT ================= */
+        select {
+            padding: 12px;
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+        }
+
+        /* ===== NESTED POPUP MENU FIX ===== */
+
+        .tree {
+            margin-top: 15px;
+            max-width: 350px;
+        }
+
+        .tree details {
+            margin-left: 20px;
+            margin-top: 10px;
+            background: #F1F5F9;
+            padding: 8px 12px;
+            border-radius: 10px;
+            border-left: 4px solid #2563EB;
+        }
+
+        .tree summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #1E40AF;
+        }
+
+        .tree summary:hover {
+            color: #0EA5E9;
+        }
+
+        .tree ul {
+            list-style: disc;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        /* ===== FIX CITY (BHUBANESWAR) VISIBILITY ===== */
+        .tree details ul li {
+            color: #0F172A;
+            /* dark readable text */
+            font-weight: 600;
+        }
+
+        /* Optional: highlight city as leaf node */
+        .tree details ul li::marker {
+            color: #2563EB;
+        }
+
+        /* Additional nesting levels styling (if any) */
+
+
+        /* ================= IFRAMES ================= */
+        iframe {
+            border: none;
+            border-radius: 16px;
+        }
+
+        /* ===== 30% – 70% PARTITION HIGHLIGHT ===== */
+        .iframe-box {
+            display: flex;
+            gap: 24px;
+            margin-top: 15px;
+        }
+
+        /* LEFT FRAME (30%) */
+        .left-frame {
+            width: 30%;
+            height: 260px;
+            background: #E0F2FE;
+            border: 3px solid #2563EB;
+            border-radius: 14px;
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+        }
+
+        /* RIGHT FRAME (70%) */
+        .right-frame {
+            width: 70%;
+            height: 260px;
+            background: #F0F9FF;
+            border: 3px solid #38BDF8;
+            border-radius: 14px;
+            box-shadow: 0 12px 25px rgba(56, 189, 248, 0.25);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        AD Lab Assignment 03 – Lists, Forms & Frames
+    </header>
+
+    <div class="dashboard">
+
+        <!-- LEFT MENU -->
+        <nav>
+            <ul>
+                <li><a href="#q1">HTML Websites</a></li>
+                <li><a href="#q2">KIIT Schools</a></li>
+                <li><a href="#q3">Nested Popup List</a></li>
+                <li><a href="#q4">Form Validation</a></li>
+                <li><a href="#q6">Google Map</a></li>
+                <li><a href="#q7">30%–70% Iframes</a></li>
+                <li><a href="#q8">YouTube Video</a></li>
+            </ul>
+        </nav>
+
+        <!-- RIGHT CONTENT -->
+        <main>
+
+            <section id="q1" class="list-card">
+                <h2>1. Important Websites to Learn HTML</h2>
+
+                <ul class="logo-list">
+                    <li>
+                        <img src="https://www.w3schools.com/favicon.ico" alt="W3Schools">
+                        <span>W3Schools</span>
+                    </li>
+                    <li>
+                        <img src="download.png" alt="MDN">
+                        <span>MDN Web Docs</span>
+                    </li>
+                    <li>
+                        <img src="download (1).png" alt="FreeCodeCamp">
+                        <span>FreeCodeCamp</span>
+                    </li>
+                    <li>
+                        <img src="https://www.geeksforgeeks.org/favicon.ico" alt="GeeksforGeeks">
+                        <span>GeeksforGeeks</span>
+                    </li>
+                    <li>
+                        <img src="https://www.codecademy.com/favicon.ico" alt="Codecademy">
+                        <span>Codecademy</span>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section id="q2" class="form-card">
+                <h2>2. KIIT University Schools</h2>
+                <select>
+                    <option>Select School</option>
+                    <option>School of Computer Engineering</option>
+                    <option>School of Electrical Engineering</option>
+                    <option>School of Mechanical Engineering</option>
+                    <option>School of Biotechnology</option>
+                    <option>School of Management</option>
+                    <option>School of Law</option>
+                    <option>School of Medical Sciences</option>
+                </select>
+            </section>
+
+            <section id="q3" class="form-card">
+                <h2>3. Nested List (Continent → Country → State → City)</h2>
+
+                <div class="tree">
+                    <details open>
+                        <summary>Asia</summary>
+
+                        <details>
+                            <summary>India</summary>
+
+                            <details>
+                                <summary>Odisha</summary>
+
+                                <ul>
+                                    <li>Bhubaneswar</li>
+                                </ul>
+                            </details>
+                        </details>
+                    </details>
+                </div>
+
+            </section>
+
+
+            <section id="q4" class="form-card">
+                <h2>4. Form Validation (HTML Only)</h2>
+
+                <form class="styled-form">
+                    <div class="form-group">
+                        <label>Email (Only Gmail)</label>
+                        <input type="email" placeholder="example@gmail.com" pattern=".+@gmail\.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Age (18–30)</label>
+                        <input type="number" min="18" max="30" placeholder="Enter age" required>
+                    </div>
+
+                    <button type="submit">Submit Form</button>
+                </form>
+            </section>
+
+
+            <section id="q6">
+                <h2>6. Google Map – KIIT University</h2>
+                <iframe width="100%" height="300"
+                    src="https://www.google.com/maps?q=KIIT%20University%20Bhubaneswar&output=embed">
+                </iframe>
+            </section>
+
+            <section id="q7">
+                <h2>7. Web Page Partitioned into 30% – 70%</h2>
+
+                <div class="iframe-box">
+
+                    <!-- LEFT FRAME -->
+                    <iframe class="left-frame" srcdoc="
+        <body style='font-family:Arial;background:#E0F2FE;padding:15px;'>
+            <h3 style='text-align:center;color:#1E40AF;'>Left Frame (30%)</h3>
+            <p>This area represents a navigation panel.</p>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </body>
+        ">
+                    </iframe>
+
+                    <!-- RIGHT FRAME -->
+                    <iframe class="right-frame" srcdoc="
+        <body style='font-family:Arial;background:#F0F9FF;padding:15px;'>
+            <h3 style='text-align:center;color:#0F172A;'>Right Frame (70%)</h3>
+            <p>This area represents the main content section.</p>
+            <p>
+                Here we display detailed information, images,
+                text, and other webpage content.
+            </p>
+        </body>
+        ">
+                    </iframe>
+
+                </div>
+            </section>
+
+            <section id="q8" class="form-card">
+                <h2>8. Embedded YouTube Video (Iframe)</h2>
+
+                <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/9bZkp7q19f0"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+            </section>
+
+
+        </main>
+    </div>
+
+</body>
+
+</html>

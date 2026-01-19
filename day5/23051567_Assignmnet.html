@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 04 – CSS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS (Req 2, 11, 13, 20) -->
+    <style>
+        p {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 16px;
+            color: #222;
+        }
+
+        .multi-para {
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        h1, h2, p {
+            margin-bottom: 10px;
+        }
+
+        .no-select {
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR (Req 14) -->
+    <nav class="navbar">
+        <span>CSS Assignment</span>
+        <div>
+            <a href="#q1">Tasks</a>
+            <a href="#q19">Form</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- ID Selector (Req 12) -->
+        <h1 id="mainHeading">Assignment 04 – CSS Styling</h1>
+
+        <!-- CARD 1 -->
+        <section class="card" id="q1">
+            <h2>1. Inline CSS Background</h2>
+            <p>The page background is applied using CSS.</p>
+        </section>
+
+        <!-- CARD 2 -->
+        <section class="card">
+            <h2>2. Internal CSS</h2>
+            <p class="multi-para">Paragraph styled using internal CSS.</p>
+        </section>
+
+        <!-- CARD 3 -->
+        <section class="card">
+            <h2>3. External CSS Heading</h2>
+            <p>Main heading is styled via external CSS.</p>
+        </section>
+
+        <!-- CARD 4 -->
+        <section class="card">
+            <h2>4. Green Border</h2>
+            <div class="green-box">2px Solid Green Border</div>
+        </section>
+
+        <!-- CARD 5 -->
+        <section class="card">
+            <h2>5. CSS Box Model</h2>
+            <div class="box-model">Margin • Border • Padding</div>
+        </section>
+
+        <!-- CARD 6 -->
+        <section class="card">
+            <h2>6. Inline Block Boxes</h2>
+            <div class="inline-box">A</div>
+            <div class="inline-box">B</div>
+            <div class="inline-box">C</div>
+        </section>
+
+        <!-- CARD 7 -->
+        <section class="card">
+            <h2>7. Hover Effect</h2>
+            <a href="#" class="hover-link">Hover Me</a>
+        </section>
+
+        <!-- CARD 8 -->
+        <section class="card">
+            <h2>8. Unordered List</h2>
+            <ul class="square-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+            </ul>
+        </section>
+
+        <!-- CARD 9 -->
+        <section class="card">
+            <h2>9. Float Layout</h2>
+            <div class="column left">Left</div>
+            <div class="column right">Right</div>
+            <div class="clear"></div>
+        </section>
+
+        <!-- CARD 10 -->
+        <section class="card bg-image">
+            <h2>10. Background Image</h2>
+        </section>
+
+        <!-- CARD 11 -->
+        <section class="card">
+            <h2>11. Class Selector</h2>
+            <p class="multi-para">Styled using class selector.</p>
+        </section>
+
+        <!-- CARD 12 -->
+        <section class="card">
+            <h2>12. ID Selector</h2>
+            <p>Main heading uses ID selector.</p>
+        </section>
+
+        <!-- CARD 13 -->
+        <section class="card">
+            <h2>13. Group Selector</h2>
+            <p>Common styling applied.</p>
+        </section>
+
+        <!-- CARD 14 -->
+        <section class="card">
+            <h2>14. Flexbox Navbar</h2>
+            <p>Navbar uses Flexbox.</p>
+        </section>
+
+        <!-- CARD 15 -->
+        <section class="card">
+            <h2>15. Card Shadow</h2>
+            <p>This card demonstrates box-shadow.</p>
+        </section>
+
+        <!-- CARD 16 -->
+        <section class="card">
+            <h2>16. Circle</h2>
+            <div class="circle"></div>
+        </section>
+
+        <!-- CARD 17 -->
+        <section class="card">
+            <h2>17. Button States</h2>
+            <button class="styled-button">Hover / Click</button>
+        </section>
+
+        <!-- CARD 18 -->
+        <section class="card">
+            <h2>18. Table Styling</h2>
+            <table>
+                <tr><th>Name</th><th>Marks</th></tr>
+                <tr><td>Akash</td><td>92</td></tr>
+                <tr><td>Rahul</td><td>88</td></tr>
+            </table>
+        </section>
+
+        <!-- CARD 19 -->
+        <section class="card" id="q19">
+            <h2>19. Form Styling</h2>
+            <form class="styled-form">
+                <label>Name</label>
+                <input type="text">
+                <label>Email</label>
+                <input type="email">
+                <input type="submit">
+            </form>
+        </section>
+
+        <!-- CARD 20 -->
+        <section class="card">
+            <h2>20. Disable Text Selection</h2>
+            <p class="no-select">You cannot select this text.</p>
+        </section>
+
+    </main>
+
+</body>
+</html>

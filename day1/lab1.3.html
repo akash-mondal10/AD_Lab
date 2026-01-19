@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Record</title>
+
+    <style>
+        body {
+            background: #e6f7f7;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .container {
+            width: 800px;
+            margin: auto;
+            background: #ffffff;
+            border: 3px solid #bcdfe0;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 2px solid #7db5b6;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #0b6070;
+            padding: 4px 8px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        td.label {
+            width: 30%;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 15px;
+            color: #0b5454;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 98%;
+            padding: 8px;
+            border: 1px solid #9fb9ba;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .photo-preview {
+            width: 120px;
+            height: 120px;
+            border: 1px solid #999;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .photo-preview img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        button,
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 14px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: 1px solid #7db5b6;
+            background: #dffefe;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2 style="text-align:center; color:#0b6070;">Resume Record</h2>
+
+        <form>
+
+            <!-- -------- PERSONAL DETAILS BOX -------- -->
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <table>
+                    <tr>
+                        <h3>Photo Upload</h3>
+
+                        <td colspan="2">
+                            <div class="photo-preview" id="previewBox">No Photo</div>
+                            <input type="file" id="photo" accept="image/*">
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="label">Name:</td>
+                        <td><input type="text" placeholder="Enter your name"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Email ID:</td>
+                        <td><input type="email" placeholder="example@mail.com"></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!-- -------- EDUCATION BOX -------- -->
+            <fieldset>
+                <legend>Education & Skills</legend>
+
+                <table>
+                    <tr>
+                        <td class="label">Programme:</td>
+                        <td>
+                            <select>
+                                <option>--Select--</option>
+                                <option>CSE</option>
+                                <option>Electronics</option>
+                                <option>Electrical</option>
+                                <option>Civil</option>
+                                <option>Mechanical</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Gender:</td>
+                        <td>
+                            <input type="radio" name="gender"> Male
+                            <input type="radio" name="gender"> Female
+                            <input type="radio" name="gender"> Other
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Skills:</td>
+                        <td>
+                            <input type="checkbox"> HTML
+                            <input type="checkbox"> CSS
+                            <input type="checkbox"> JavaScript
+                            <input type="checkbox"> Python
+                            <input type="checkbox"> UI/UX
+                            <input type ="checkbox"> Data Analysis
+                            <input type="checkbox"> Machine Learning
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!-- -------- CAREER OBJECTIVE BOX -------- -->
+            <fieldset>
+                <legend>Career Objective</legend>
+
+                <table>
+                    <tr>
+                        <td class="label">Objective:</td>
+                        <td><textarea placeholder="Write your career objective here..."></textarea></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!-- Buttons -->
+            <input type="submit">
+            <input type="reset">
+
+        </form>
+    </div>
+    <script>
+        const photoInput = document.getElementById('photo');
+        const previewBox = document.getElementById('previewBox');
+
+        photoInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewBox.innerHTML = `<img src="${e.target.result}" alt="Photo Preview">`;
+                }
+                reader.readAsDataURL(file);
+            } else {
+                previewBox.innerHTML = 'No Photo';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
